@@ -40,7 +40,7 @@ echo "<hr> ";
 
 echo "
 	<style>
-		p { margin: 0px; }
+		p { margin: 0px; white-space: pre; }
 		p.unknown { color: black; }
 		p.weblog { color: lightblue; }
 		p.mediaplayersdk { color: gray; margin-left: 50px; }
