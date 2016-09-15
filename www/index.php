@@ -16,6 +16,16 @@ if(isset($_POST['deletefile'])){
 }
 
 
+?>
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+
+<?php
+
 $fname = 'log_'.date('Ymd_His', time()).'.log';
 echo "
 	  <button href='javascript:void(0);' onclick='addtext.style.display=\"block\"'>Add Log</button>

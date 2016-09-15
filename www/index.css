@@ -1,0 +1,16 @@
+p {
+	margin: 0px;
+	white-space: pre;
+}
+
+p.unknown {
+	color: black;
+}
+
+p.error {
+	color: red;
+}
+
+p.weblog { color: lightblue; }
+p.mediaplayersdk { color: gray; margin-left: 50px; }
+p.playerevents { color: black; font-weight: bold; margin-left: 25px; }
