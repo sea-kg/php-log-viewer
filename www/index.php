@@ -53,6 +53,7 @@ echo "
 		p { margin: 0px; white-space: pre; }
 		p.unknown { color: black; }
 		p.weblog { color: lightblue; }
+		p.error { color: red; }
 		p.mediaplayersdk { color: gray; margin-left: 50px; }
 		p.playerevents { color: black; font-weight: bold; margin-left: 25px; }
 	</style>
@@ -66,10 +67,15 @@ function getClass($line){
 	if(preg_match("/\\d+:\\d+:\\d+:(player\\.c|ffmpeg_content_provider\\.c|content_provider_thread\\.c|video_renderer_thread\\.c|egl_video_renderer_provider\\.c|video_decoder_thread\\.c|recorder_provider_thread\\.c).*/i", $line)){
 		return "mediaplayersdk";
 	}
+	
 	if(preg_match("/^(PLP_|CP_).*/i", $line)){
 		return "playerevents";
 	}
 	
+	if(preg_match("/^\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d+ \\d+-\\d+\\/[a-zA-Z.]+ E\\/.*/i", $line)){
+	       return "error";
+	}
+
 	return "unknown";
 }
 
