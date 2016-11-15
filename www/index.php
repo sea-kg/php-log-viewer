@@ -21,6 +21,8 @@ if(isset($_POST['deletefile'])){
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/php.log.viewer.js"></script>
 </head>
 <body>
 
@@ -86,8 +88,10 @@ if(isset($_GET['file'])){
 		echo "<h1>".$filename;
 		echo "  <form method='POST' style='display: inline-block' ><input type=hidden name='deletefile' value='".$filename."'/><input type=submit value='delete log'/></form></h1>";
 		
+		echo '<div><input id="filter_text" onkeydown="if(event.keyCode == 13) core.applyFilter();" type="text"/><button id="filter_btn">Filter</button></div><br>';
+
 		while (($line = fgets($handle)) !== false) {
-			echo "<p class='".getClass($line)."'>".$line."</p>";
+			echo "<p class='log-line ".getClass($line)."'>".$line."</p>";
 		}
 		fclose($handle);
 	} else {
